@@ -44,6 +44,8 @@
 
 <header class="hero">
 
+    <div class="hero-decor" aria-hidden="true"></div>
+
     <div class="container">
 
 
@@ -52,11 +54,19 @@
 
             <!-- Фото -->
 
-            <img
-                src="img/photo.jpg"
-                alt="Максименко Елена Викторовна"
-                class="profile-photo"
-            >
+            <div class="profile-photo-wrap">
+
+                <img
+                    src="img/photo.jpg"
+                    alt="Максименко Елена Викторовна"
+                    class="profile-photo"
+                >
+
+                <span class="experience-badge">
+                    20+ лет<br>опыта
+                </span>
+
+            </div>
 
 
 
@@ -64,6 +74,10 @@
 
             <div class="profile-info">
 
+                <span class="profile-kicker">
+                    <i class="fa-solid fa-house"></i>
+                    Сити-Центр · Недвижимость
+                </span>
 
                 <h1>
                     Максименко<br>
@@ -98,7 +112,7 @@
 
                     <a
                         href="https://wa.me/79066785781"
-                        class="button"
+                        class="button whatsapp"
                         target="_blank"
                     >
 
@@ -169,14 +183,14 @@
 
 
 
-        <p>
+        <p class="lead reveal">
             Приветствую вас на своей странице!
             Меня зовут Елена Максименко.
         </p>
 
 
 
-        <p>
+        <p class="reveal">
             Более 20 лет я работаю в сфере жилой недвижимости.
             Мой профессиональный путь начался в крупной строительной
             компании, где я вела проекты от разработки планировочных
@@ -186,14 +200,14 @@
 
 
 
-        <p>
+        <p class="reveal">
             Сегодня я работаю риелтором, специализируюсь
             на новостройках и продаже вторичной недвижимости.
         </p>
 
 
 
-        <p>
+        <p class="reveal">
             Люблю творческий подход к работе.
             Ценю доверие своих клиентов ❤️
         </p>
@@ -223,7 +237,12 @@
 
 
 
-<div class="qualification-card">
+<div class="qualification-card reveal">
+
+
+<span class="verified-badge">
+<i class="fa-solid fa-check"></i>
+</span>
 
 
 <h3>
@@ -346,11 +365,25 @@
 
 
 
-<div class="review">
+<div class="review reveal">
 
+
+<i class="fa-solid fa-quote-right review-quote-icon"></i>
+
+
+<div class="review-top">
+
+<div class="avatar">ОК</div>
+
+<div>
+<div class="reviewer-name">Ольга Константинова</div>
+<div class="review-date">05.05.2026</div>
+</div>
 
 <div class="stars">
 ★★★★★
+</div>
+
 </div>
 
 
@@ -368,12 +401,6 @@
 </p>
 
 
-
-<span>
-Ольга Константинова · 05.05.2026
-</span>
-
-
 </div>
 
 
@@ -381,11 +408,25 @@
 
 
 
-<div class="review">
+<div class="review reveal">
 
+
+<i class="fa-solid fa-quote-right review-quote-icon"></i>
+
+
+<div class="review-top">
+
+<div class="avatar">Е</div>
+
+<div>
+<div class="reviewer-name">Елена</div>
+<div class="review-date">27.04.2026</div>
+</div>
 
 <div class="stars">
 ★★★★★
+</div>
+
 </div>
 
 
@@ -399,11 +440,6 @@
 </p>
 
 
-<span>
-Елена · 27.04.2026
-</span>
-
-
 </div>
 
 
@@ -412,11 +448,25 @@
 
 
 
-<div class="review">
+<div class="review reveal">
 
+
+<i class="fa-solid fa-quote-right review-quote-icon"></i>
+
+
+<div class="review-top">
+
+<div class="avatar">ЕД</div>
+
+<div>
+<div class="reviewer-name">Елена Данилова</div>
+<div class="review-date">27.04.2026</div>
+</div>
 
 <div class="stars">
 ★★★★★
+</div>
+
 </div>
 
 
@@ -429,11 +479,6 @@
 Всем буду рекомендовать Вас и Ваше агентство.
 Спасибо большое за всё!!!
 </p>
-
-
-<span>
-Елена Данилова · 27.04.2026
-</span>
 
 
 </div>
@@ -469,26 +514,28 @@
 
 
 
-<div class="contact-item">
+<div class="contact-item reveal">
 
 <i class="fa-solid fa-phone"></i>
 
-<span>
-+7 (906) 678-57-81
-</span>
+<div class="contact-text">
+<span class="contact-label">Телефон</span>
+<span class="contact-value">+7 (906) 678-57-81</span>
+</div>
 
 </div>
 
 
 
 
-<div class="contact-item">
+<div class="contact-item reveal">
 
 <i class="fa-solid fa-phone"></i>
 
-<span>
-+7 (919) 186-42-07
-</span>
+<div class="contact-text">
+<span class="contact-label">Телефон</span>
+<span class="contact-value">+7 (919) 186-42-07</span>
+</div>
 
 </div>
 
@@ -496,13 +543,14 @@
 
 
 
-<div class="contact-item">
+<div class="contact-item reveal">
 
 <i class="fa-solid fa-envelope"></i>
 
-<span>
-maksimenko@city-vrn.com
-</span>
+<div class="contact-text">
+<span class="contact-label">Email</span>
+<span class="contact-value">maksimenko@city-vrn.com</span>
+</div>
 
 </div>
 
@@ -510,16 +558,19 @@ maksimenko@city-vrn.com
 
 
 
-<div class="contact-item">
+<div class="contact-item reveal">
 
 <i class="fa-solid fa-location-dot"></i>
 
-<span>
+<div class="contact-text">
+<span class="contact-label">Адрес</span>
+<span class="contact-value">
 Воронежская область,
 г. Воронеж,
 ул. 40 лет Октября,
 д. 8, офис 9
 </span>
+</div>
 
 </div>
 
@@ -527,16 +578,19 @@ maksimenko@city-vrn.com
 
 
 
-<div class="contact-item">
+<div class="contact-item reveal">
 
 <i class="fa-solid fa-globe"></i>
 
+<div class="contact-text">
+<span class="contact-label">Сайт</span>
 <a href="https://сити-центр-воронеж.рф/"
 target="_blank">
 
 сити-центр-воронеж.рф
 
 </a>
+</div>
 
 </div>
 

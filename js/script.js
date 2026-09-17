@@ -16,7 +16,7 @@ if (phoneButton) {
     event.preventDefault();
 
 
-    phoneModal.style.display = 'flex';
+    phoneModal.classList.add('active');
   });
 }
 
@@ -24,7 +24,7 @@ if (phoneButton) {
 
 if (phoneClose) {
   phoneClose.addEventListener('click', function() {
-    phoneModal.style.display = 'none';
+    phoneModal.classList.remove('active');
   });
 }
 
@@ -33,7 +33,7 @@ if (phoneClose) {
 if (phoneModal) {
   phoneModal.addEventListener('click', function(event) {
     if (event.target === phoneModal) {
-      phoneModal.style.display = 'none';
+      phoneModal.classList.remove('active');
     }
   });
 }
@@ -63,7 +63,7 @@ if (emailButton) {
     event.preventDefault();
 
 
-    emailModal.style.display = 'flex';
+    emailModal.classList.add('active');
   });
 }
 
@@ -71,7 +71,7 @@ if (emailButton) {
 
 if (emailClose) {
   emailClose.addEventListener('click', function() {
-    emailModal.style.display = 'none';
+    emailModal.classList.remove('active');
   });
 }
 
@@ -80,7 +80,7 @@ if (emailClose) {
 if (emailModal) {
   emailModal.addEventListener('click', function(event) {
     if (event.target === emailModal) {
-      emailModal.style.display = 'none';
+      emailModal.classList.remove('active');
     }
   });
 }
@@ -97,11 +97,13 @@ if (copyEmail) {
 
 
     copyEmail.textContent = 'Скопировано ✓';
+    copyEmail.classList.add('copied');
 
 
 
     setTimeout(function() {
       copyEmail.textContent = 'Скопировать';
+      copyEmail.classList.remove('copied');
     }, 2000);
   });
 }
@@ -125,7 +127,7 @@ const certificateClose = document.querySelector('.close');
 
 if (certificateButton) {
   certificateButton.addEventListener('click', function() {
-    certificateModal.style.display = 'flex';
+    certificateModal.classList.add('active');
   });
 }
 
@@ -133,7 +135,7 @@ if (certificateButton) {
 
 if (certificateClose) {
   certificateClose.addEventListener('click', function() {
-    certificateModal.style.display = 'none';
+    certificateModal.classList.remove('active');
   });
 }
 
@@ -142,7 +144,7 @@ if (certificateClose) {
 if (certificateModal) {
   certificateModal.addEventListener('click', function(event) {
     if (event.target === certificateModal) {
-      certificateModal.style.display = 'none';
+      certificateModal.classList.remove('active');
     }
   });
 }
@@ -157,19 +159,50 @@ if (certificateModal) {
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     if (phoneModal) {
-      phoneModal.style.display = 'none';
+      phoneModal.classList.remove('active');
     }
 
 
 
     if (emailModal) {
-      emailModal.style.display = 'none';
+      emailModal.classList.remove('active');
     }
 
 
 
     if (certificateModal) {
-      certificateModal.style.display = 'none';
+      certificateModal.classList.remove('active');
     }
   }
 });
+
+
+
+// ==================================================
+// SCROLL REVEAL
+// ==================================================
+
+
+const revealElements = document.querySelectorAll('.reveal');
+
+if (revealElements.length && 'IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(function(element) {
+    revealObserver.observe(element);
+  });
+} else {
+  revealElements.forEach(function(element) {
+    element.classList.add('in-view');
+  });
+}
